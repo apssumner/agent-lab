@@ -42,7 +42,7 @@ def customer_balance_summary() -> dict:
 
 @mcp.tool()
 def search_policies(question: str) -> dict:
-    """Search the bank's policy documents semantically to answer a question about rules, procedures, or compliance requirements. Returns the most relevant policy text(s)."""
+    """Search bank policy documents semantically to find rules on account dormancy, large transaction thresholds, identity verification, overdraft fees, or joint account authorization. Use this for any question about bank procedures or compliance requirements, even if it doesn't mention an exact policy name."""
     # query the collection for the most relevant documents
     results = policy_collection.query(query_texts=[question], n_results=2)
 
